@@ -1,0 +1,15 @@
+var random = require('./random');
+var defbank = require('./defbank');
+
+var addressbank = {
+
+    latitude: function () {
+        return (random.between(430586362, 505045029) / 10000000.0).toFixed(7);
+    },
+
+    longitude: function () {
+        return (-(random.between(0.0000000, 45688916) / 10000000.0).toFixed(7));
+    }
+};
+
+module.exports = addressbank;

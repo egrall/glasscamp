@@ -1,0 +1,9 @@
+{
+    "port" : 8080,
+    "security": {
+        "tokenLife" : 7889400
+    },
+    "mongoose": {
+        "uri": "mongodb://localhost/apiglass"
+    }
+}

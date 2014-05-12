@@ -1,0 +1,53 @@
+{
+    "name": "ApiGlassCampFaker",
+    "version": "0.1.0",
+    "author": "Eric GRALL",
+    "description": "Glass Camp Api Faker Arkea",
+    "private": true,
+    "contributors": [ 
+         {
+           "name": "Eric GRALL",
+           "email": "eric.grall@arkea.com"
+         } 
+    ],    
+    "scripts": {
+        "start": "node ./core.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/egrall/apiGlassFaker"
+    },    
+    "dependencies" : {
+        "express"       					: "latest",
+        "cookie-parser"						: "latest",
+        "body-parser"						: "latest",
+        "static-favicon"					: "latest",
+        "express-session"					: "latest",
+        "mongoose"      					: ">=3.6.x",
+        "validator"							: "latest",
+        "passport"      					: ">=0.1.x",
+        "passport-local" 					: ">=1.0.0",
+        "passport-http" 					: ">=0.2.x",
+        "passport-http-bearer"				: ">=1.0.x",
+        "passport-oauth2-client-password"	: ">=0.1.x",
+        "connect-ensure-login"				: "latest",
+        "oauth2orize"   					: "0.1.x",        
+        "winston"       					: ">=0.7.x",
+        "nconf"         					: ">=0.6.x",
+        "connect-flash"						: ">=0.1.x",
+        "Faker"								: "latest",
+        "nodemailer"						: "latest",
+        "jade"								: "latest",
+        "node-uuid"							: "*",
+        "paypal-rest-sdk"					: "*"
+   },
+    "keywords": [
+                 "arkea",
+                 "camp",
+                 "glass",
+                 "http",
+                 "server",
+                 "api"
+               ],
+    "license": "MIT"
+}
