@@ -1,0 +1,6 @@
+La version de l'API Glass Camp doit permettre d'exposer des informations bancaires afin de mettre en oeuvre des réalisations sur les 2 jours de l'évenement Glass Camp Arkea.
+
+ - Les données sont créées par Faker, et un complément bancaire interne FakerBank,
+ - La sécurisation OAuth a été enlevé par commentaires (pas classe mais bon ),
+ 
+ - les API RestFul (en dehors des Links non initialisés) sont documentés dans (ADU).
