@@ -24,7 +24,7 @@ var contract = {
 	},
 	
 	iban: function()	{
-		return helpers.replaceSymbolWithNumber(defbank.iban_formats['FR'],'#');
+		return helpers.replaceSymbolWithNumber(defbank.iban_formats['FR'][0],'#');
 	},
 	
 	created: function(years)	{

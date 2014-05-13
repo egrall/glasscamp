@@ -29,9 +29,9 @@ card_format[DISCOVERCARD] = new Array('6011############');
 
 
 //IBAN FORMATS ---------------------
-//http://fr.wikipedia.org/wiki/ISO_13616#Algorithme_de_v.C3.A9rification_de_l.27IBAN
+//http://fr.wikipedia.org/wiki/ISO_13616#Algorithme_de_verification_de_l.IBAN
 var iban_formats = new Array();
-iban_formats['FR'] = new Array('FR76 BBBB BGGG GGCC CCCC CCCC CKK');
+iban_formats['FR'] = new Array('FR76 #### #### #### #### #### ###');   //FR76 BBBB BGGG GGCC CCCC CCCC CKK
 
 
 //CRYPTOGRAM FORMATS ---------------------

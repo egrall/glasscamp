@@ -6,7 +6,7 @@
 var NbAgency			= 5;						//Nombre d'agences bancaires
 var NbMaxAgentByAgency	= 2;						//Nombre max d'agents par agences
 var NbABM				= 30;						//Nombre de GAB
-var NbPerson 			= 100;						//Nombre de clients
+var NbPerson 			= 30;						//Nombre de clients
 
 
 //banking and customers module

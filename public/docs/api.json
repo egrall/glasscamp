@@ -1,0 +1,14 @@
+{
+	"version":"0.1.0",
+	"basePath":"http://api.glasscamp.fr",
+	"resources":[
+		{
+			"resource":"Agency",
+			"json":"agency.json"
+		},
+		{
+			"resource":"Person",
+			"json":"person.json"
+		}
+	]
+}

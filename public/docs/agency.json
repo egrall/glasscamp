@@ -1,0 +1,29 @@
+{
+    "version":"0.1.0",
+    "resource":"doc",
+    "endpoints":[
+        {
+            "endpoint":"Agency",
+            "httpMethod":"GET",
+            "description":"Example for the API Docs.",
+            "shortDecription":"Example",
+            "url":"/api/agency",
+            "output":"{ 'agencyId' : 'String' , 'name': 'String'},"
+        },
+        {
+            "endpoint":"Agency",
+            "httpMethod":"PUT",
+            "description":"Example for the API Docs.",
+            "shortDecription":"Example",
+            "url":"/api/agency",
+            "parameters":[
+                {
+                	 "parameter":"id",
+                     "value":"(number)",
+                     "description": "ID of the doc example"            
+                }
+            ],
+            "output":"{ 'agencyId' : 'String'},"        	
+        }
+    ]
+} 
