@@ -1,9 +1,10 @@
 var validator 			= require('validator');
 var assert 				= require('../libs/assert');
 var fakerBank 			= require('../faker/fakerbank');
+var CreditCard = require('../schemas/creditcard').CreditCardModel;
 
 
-module.exports = function(app, log, passport, CreditCard) {
+module.exports = function(app, log, passport) {
 
 	//PUBLIC API VIRTUALIS (without token oAuth.2.0) --------
 	

@@ -1,9 +1,9 @@
 
-var validator = require('validator');
+var validator 			= require('validator');
 var fakerBank 			= require('../faker/fakerbank');  //To generate latitude & longitude
+var Agency 				= require('../schemas/agency').AgencyModel;
 
-
-module.exports = function(app, log, passport, Agency) {
+module.exports = function(app, log, passport) {
 	
 	//
 	// GET API ----------------------------------------------------------------------------
@@ -25,7 +25,7 @@ module.exports = function(app, log, passport, Agency) {
 	
 	
 	app.get('/api/agency/:id',
-			//passport.authenticate('bearer', { session: false }), 
+			//passport.authenticate('bearer', { session: false }),
 			function(req, res) {
 			    return Agency.findById(req.params.id, function (err, agency) {
 			        if (!err) {

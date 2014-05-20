@@ -2,8 +2,10 @@
 var validator 		= require('validator');
 var fakerBank 		= require('../faker/fakerbank');
 
+var Contract = require('../schemas/contract').ContractModel
 
-module.exports = function(app, log, passport, Contract) {
+
+module.exports = function(app, log, passport) {
 	
 	//
 	// GET API ----------------------------------------------------------------------------

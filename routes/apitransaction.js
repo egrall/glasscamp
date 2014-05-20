@@ -1,7 +1,8 @@
 
 var validator = require('validator');
+var Transaction = require('../schemas/transaction').TransactionModel;
 
-module.exports = function(app, log, passport, Transaction) {
+module.exports = function(app, log, passport) {
 	
 	//
 	// GET API ----------------------------------------------------------------------------

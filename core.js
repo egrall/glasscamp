@@ -2,6 +2,7 @@ var express = require('express');
 var config = require('./libs/config');
 var log = require('./libs/log')(module);
 var path = require('path');
+var fs = require('fs');
 
 var cookieParser	= require('cookie-parser');
 var bodyParser 		= require('body-parser');
@@ -12,17 +13,6 @@ var flash = require('connect-flash');
 var passport = require('passport');
 var oauthprovider	= require('./libs/oauthprovider');
 var mailer = require('./libs/mailer');
-
-
-//BANK SCHEMA USING ------------------------------------------------
-var Agency = require('./schemas/agency').AgencyModel;
-var Agent = require('./schemas/agent').AgentModel;
-var Abm = require('./schemas/abm').AbmModel;
-
-var Person = require('./schemas/person').PersonModel;
-var CreditCard = require('./schemas/creditcard').CreditCardModel;
-var Transaction = require('./schemas/transaction').TransactionModel;
-var Contract = require('./schemas/contract').ContractModel
 
 
 //OAuth Front Module
@@ -69,19 +59,12 @@ app.get('/api/userInfo',
  * API BANK ARKEA   ######################################################################
  */
 
-require('./routes/apiversion')(app, log, passport);						//API INFOS (without token oAuth.2.0) -------------------------------------
-require('./routes/apitest')(app, log, passport);						//API TEST PRIMITIVES (without token oAuth.2.0) -------------------------------------
-
-require('./routes/apiagency')(app, log, passport, Agency);				//API AGENCY (without token oAuth.2.0) -------------------------------------
-require('./routes/apiagent')(app, log, passport, Agent);				//API AGENCY (without token oAuth.2.0) -------------------------------------
-require('./routes/apiabm')(app, log, passport, Abm);					//API AGENT (without token oAuth.2.0) -------------------------------------
-
-require('./routes/apiperson')(app, log, passport, Person);				//API PERSON (without token oAuth.2.0) -------------------------------------
-require('./routes/apicreditcard')(app, log, passport, CreditCard);  	//API CREDITCARD (without token oAuth.2.0) -------------------------------------
-require('./routes/apicontract')(app, log, passport, Contract);			//API PRODUCTS (without token oAuth.2.0) -------------------------------------
-require('./routes/apitransaction')(app, log, passport, Transaction);	//API TRANSACTION (without token oAuth.2.0) -------------------------------------
-
-require('./routes/apivirtualis')(app, log, passport, CreditCard);		//API VIRTUALIS (without token oAuth.2.0) -------------------------------------
+fs.readdirSync(__dirname + '/routes').forEach(function(filename) {
+	  if (/\.js$/.test(filename)) {
+	    var name = path.basename(filename, '.js');
+	    require('./routes/' + name)(app, log, passport);
+	  }
+	});
 
 
 /*

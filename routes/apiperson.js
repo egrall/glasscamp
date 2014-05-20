@@ -1,9 +1,11 @@
 
 var validator 			= require('validator');
 var fakerBank 			= require('../faker/fakerbank');  //To generate latitude & longitude
+var Person = require('../schemas/person').PersonModel;
 
 
-module.exports = function(app, log, passport, Person) {
+
+module.exports = function(app, log, passport) {
 	
 	//
 	// GET API ----------------------------------------------------------------------------

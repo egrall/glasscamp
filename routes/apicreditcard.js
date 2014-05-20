@@ -1,8 +1,10 @@
 var validator = require('validator');
 var assert = require('../libs/assert');
 
+var CreditCard = require('../schemas/creditcard').CreditCardModel;
 
-module.exports = function(app, log, passport, CreditCard) {
+
+module.exports = function(app, log, passport) {
 
 	
 	//PUBLIC API CREDITCARD (without token oAuth.2.0) -------- >> FOR TESTING
