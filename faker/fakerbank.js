@@ -48,11 +48,21 @@ fakerBank.address.latitude = function () {
 	return addressbank.latitude();
 };
 
-
 fakerBank.address.longitude = function () {
 	return addressbank.longitude();
 };
 
+fakerBank.address.streetAddress = function () {
+	return addressbank.streetAddress();
+};
+
+fakerBank.address.zipCode = function () {
+	return addressbank.zipCode();
+};
+
+fakerBank.address.city = function () {
+	return addressbank.city();
+};
 
 
 //api credit card definition -----

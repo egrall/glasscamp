@@ -23,9 +23,9 @@ AbmModel.remove({}, function(err) {
 				name: faker.Address.streetName().toLowerCase(),
 				description : 'ABM ARKEA : ' + itemAbm,				
 				locations: [{
-					address: faker.Address.streetAddress(),
-					postcode:faker.Address.zipCode(),
-					city:faker.Address.city(),
+					address: fakerBank.address.streetAddress(),
+					postcode:fakerBank.address.zipCode(),
+					city:fakerBank.address.city(),
 					country: 'France',
 					locations : {
 						latitude: fakerBank.address.latitude(),

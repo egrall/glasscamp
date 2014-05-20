@@ -39,10 +39,10 @@ AgentModel.remove({}, function(err) {
 							last_name: lastname,
 							first_name : firstname,
 							locations: [{
-								address: agency.locations[0].address,
-								postcode: agency.locations[0].postcode,
-								city: agency.locations[0].city,
-								country: agency.locations[0].country,
+								address: fakerBank.address.streetAddress(),
+								postcode:fakerBank.address.zipCode(),
+								city:fakerBank.address.city(),
+								country: 'France',
 								locations : {
 									latitude: fakerBank.address.latitude(),
 									longitude: fakerBank.address.longitude()

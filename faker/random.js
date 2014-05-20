@@ -71,6 +71,16 @@ var random = {
 
     contract_custom:function()	{
         return this.array_element(defbank.contract_custom);
+    },
+    
+    
+    //adresses ------------------------------------
+    street_address:function()	{
+        return this.array_element(defbank.adressesFr);
+    },
+    
+    city:function()	{
+        return this.array_element(defbank.cityFr);
     }
 }
 

@@ -49,9 +49,9 @@ PersonModel.remove({}, function(err) {
         									first_name : firstname 
         								},
         								locations: [{
-        									address: faker.Address.streetAddress(),
-        									postcode:faker.Address.zipCode(),
-        									city:faker.Address.city(),
+        									address: fakerBank.address.streetAddress(),
+        									postcode:fakerBank.address.zipCode(),
+        									city:fakerBank.address.city(),
         									country: 'France',
         									locations : {
         										latitude: fakerBank.address.latitude(),
