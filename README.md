@@ -3,7 +3,7 @@ glasscamp
 
 ARKEA Glass Camp Bank API Faker
 
-v.0.1.0
+v.0.2.0
 
 RestFul API Bank ARKEA
 
