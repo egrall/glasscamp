@@ -16,7 +16,7 @@ module.exports = function(app, log, passport) {
 	app.get('/api/person', function (req, res) {
 	    return Person.find(function (err, person) {
 	        if (!err) {
-	            return res.json(person);
+	            return res.json({ person:person }); 
 	        } else {
 	        	 res.statusCode = 404;
 		         return res.send({ error: 'Not found' });
@@ -31,7 +31,7 @@ module.exports = function(app, log, passport) {
 			function(req, res) {
 			    return Person.findById(req.params.id, function (err, person) {
 			        if (!err) {
-			            return res.json(person);
+			            return res.json({ person:person }); 
 			        } else {
 			        	 res.statusCode = 404;
 				         return res.send({ error: 'Not found' });

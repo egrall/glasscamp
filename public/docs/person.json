@@ -1,29 +1,155 @@
 {
     "version":"0.1.0",
-    "resource":"doc",
+    "resource":"API Glass Bank",
     "endpoints":[
         {
-            "endpoint":"Person",
+            "endpoint":"person",
             "httpMethod":"GET",
-            "description":"Example for the API Docs.",
-            "shortDecription":"Example",
+            "description":"All person for the API Docs.",
+            "shortDecription":"All person",
             "url":"/api/person",
-            "output":"{ 'agencyId' : 'String' , 'name': 'String'},"
+            "output":"{ 'person':'person'},"
         },
         {
-            "endpoint":"Person",
-            "httpMethod":"PUT",
-            "description":"Example for the API Docs.",
-            "shortDecription":"Example",
+            "endpoint":"person/:id",
+            "httpMethod":"GET",
+            "description":"get person for the API Docs.",
+            "shortDecription":"get person",
+            "url":"/api/person/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of person"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'person':'person'},"
+        },
+        {
+            "endpoint":"person/adresses/:userId",
+            "httpMethod":"GET",
+            "description":"get adresses of person for the API Docs.",
+            "shortDecription":"get adresses",
+            "url":"/person/adresses/:userId",
+            "parameters":[
+                          {
+                          	 "parameter":"userId",
+                               "value":"(number)",
+                               "description": "ID of userId"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'adresses':'adresses'},"
+        },
+        {
+            "endpoint":"person/phones/:userId",
+            "httpMethod":"GET",
+            "description":"get phones of person for the API Docs.",
+            "shortDecription":"get phones",
+            "url":"/person/phones/:userId",
+            "parameters":[
+                          {
+                          	 "parameter":"userId",
+                               "value":"(number)",
+                               "description": "ID of userId"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'phones':'phones'},"
+        },
+        {
+            "endpoint":"person/photos/:userId",
+            "httpMethod":"GET",
+            "description":"get photos of person for the API Docs.",
+            "shortDecription":"get photos",
+            "url":"/person/photos/:userId",
+            "parameters":[
+                          {
+                          	 "parameter":"userId",
+                               "value":"(number)",
+                               "description": "ID of userId"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'photos':'photos'},"
+        },      
+        {
+            "endpoint":"person",
+            "httpMethod":"POST",
+            "description":"create person for the API Docs.",
+            "shortDecription":"person",
             "url":"/api/person",
             "parameters":[
-                {
-                	 "parameter":"id",
-                     "value":"(number)",
-                     "description": "ID of the doc example"            
-                }
+                          {
+                          	 "parameter":"userId",
+                               "value":"(number)",
+                               "description": "ID of user"            
+                          },
+                          {
+                           	 "parameter":"last_name",
+                                "value":"(String)",
+                                "description": "last_name of person"            
+                           },
+                           {
+                            	 "parameter":"first_name",
+                                 "value":"(String)",
+                                 "description": "first_name of person"            
+                            },
+                            {
+                            	 "parameter":"mail",
+                                 "value":"(String)",
+                                 "description": "mail of person"            
+                            },                            
+                            {
+                           	 "parameter":"address",
+                                "value":"(String)",
+                                "description": "address of person"            
+                           },  
+                           {
+                          	 "parameter":"postcode",
+                               "value":"(String)",
+                               "description": "postcode of person"            
+                          },  
+                          {
+                         	 "parameter":"city",
+                              "value":"(String)",
+                              "description": "mail of person"            
+                         },  
+                         {
+                        	 "parameter":"city",
+                             "value":"(String)",
+                             "description": "city of person"            
+                        },  
+                        {
+                       	 "parameter":"country",
+                            "value":"(String)",
+                            "description": "country of person"            
+                       },
+                       {
+                      	 "parameter":"phone",
+                           "value":"(number)",
+                           "description": "phone of person"            
+                      }                       
+ 
             ],
-            "output":"{ 'agencyId' : 'String'},"        	
-        }
+            "output":"{ 'person' : 'person'},"        	
+        },
+        {
+            "endpoint":"person",
+            "httpMethod":"DELETE",
+            "description":"delete person for the API Docs.",
+            "shortDecription":"del person",
+            "url":"/api/person/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of person"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'status':'ok'},"
+        }       
     ]
 } 

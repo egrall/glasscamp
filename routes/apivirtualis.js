@@ -55,7 +55,7 @@ module.exports = function(app, log, passport) {
 						.sort('-created')
 						.exec(function (err, creditCard) {
 			        if (!err) {
-			            return res.json(creditCard);
+			            return res.json({creditCard:creditCard});
 			        } else {
 			            res.statusCode = 500;
 			            log.error('Internal error(%d)',res.statusCode);

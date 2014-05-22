@@ -1,29 +1,67 @@
 {
     "version":"0.1.0",
-    "resource":"doc",
+    "resource":"API Glass Bank",
     "endpoints":[
         {
-            "endpoint":"Agency",
+            "endpoint":"agency",
             "httpMethod":"GET",
-            "description":"Example for the API Docs.",
-            "shortDecription":"Example",
+            "description":"all agency for the API Docs.",
+            "shortDecription":"agency",
             "url":"/api/agency",
-            "output":"{ 'agencyId' : 'String' , 'name': 'String'},"
+            "output":"{ 'agency':'agency'},"
         },
         {
-            "endpoint":"Agency",
-            "httpMethod":"PUT",
-            "description":"Example for the API Docs.",
-            "shortDecription":"Example",
+            "endpoint":"agency/:id",
+            "httpMethod":"GET",
+            "description":"get agency for the API Docs.",
+            "shortDecription":"get agency",
+            "url":"/api/agency/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of agency"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'agency':'agency'},"
+        },          
+        {
+            "endpoint":"agency",
+            "httpMethod":"POST",
+            "description":"create agency for the API Docs.",
+            "shortDecription":"agency",
             "url":"/api/agency",
             "parameters":[
-                {
-                	 "parameter":"id",
-                     "value":"(number)",
-                     "description": "ID of the doc example"            
-                }
+                          {
+                          	 "parameter":"name",
+                               "value":"(String)",
+                               "description": "name of agency"            
+                          },
+                          {
+                           	 "parameter":"phone",
+                                "value":"(number)",
+                                "description": "phone of agency"            
+                           }               
+ 
             ],
-            "output":"{ 'agencyId' : 'String'},"        	
-        }
+            "output":"{ 'agency' : 'agency'},"        	
+        },
+        {
+            "endpoint":"agency/:id",
+            "httpMethod":"DELETE",
+            "description":"delete agency for the API Docs.",
+            "shortDecription":"del agency",
+            "url":"/api/creditcard/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of agency"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'status':'ok'},"
+        }       
     ]
 } 

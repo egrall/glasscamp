@@ -13,7 +13,7 @@ module.exports = function(app, log, passport) {
 	app.get('/api/transaction', function (req, res) {
 	    return Transaction.find(function (err, transaction) {
 	        if (!err) { 
-	            return res.json(transaction);
+	            return res.json({transaction:transaction});
 	        } else {
 	        	 res.statusCode = 404;
 		         return res.send({ error: 'Not found' });
@@ -27,7 +27,7 @@ module.exports = function(app, log, passport) {
 			function(req, res) {
 			    return Transaction.find({ userId : req.params.id }, function (err, transaction) {
 			        if (!err) {
-			            return res.json(transaction);
+			            return res.json({transaction:transaction});
 			        } else {
 			        	 res.statusCode = 404;
 				         return res.send({ error: 'Not found' });
@@ -47,7 +47,7 @@ module.exports = function(app, log, passport) {
 	
 		    return	Transaction.find({ userId : req.params.id }).where('operationDate').gt(new Date(mindateString)).lt(new Date(maxdateString)).exec(function (err, transaction) {
 		        if (!err) {
-		            return res.json(transaction);
+		            return res.json({transaction:transaction});
 		        } else {
 		        	 res.statusCode = 404;
 			         return res.send({ error: 'Not found' });

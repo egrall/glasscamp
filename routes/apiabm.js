@@ -16,7 +16,7 @@ module.exports = function(app, log, passport) {
 	app.get('/api/abm', function (req, res) {
 	    return Abm.find(function (err, abm) {
 	        if (!err) { 
-	            return res.json(abm);
+	            return res.json({ abm:abm });
 	        } else {
 	        	 res.statusCode = 404;
 		         return res.send({ error: 'Not found' });
@@ -31,7 +31,7 @@ module.exports = function(app, log, passport) {
 			function(req, res) {
 			    return Abm.findById(req.params.id, function (err, abm) {
 			        if (!err) {
-			            return res.json(abm);
+			            return res.json({ abm:abm });
 			        } else {
 			        	 res.statusCode = 404;
 				         return res.send({ error: 'Not found' });

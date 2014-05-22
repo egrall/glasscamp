@@ -16,7 +16,7 @@ module.exports = function(app, log, passport) {
 	app.get('/api/contract', function (req, res) {
 	    return Contract.find(function (err, contract) {
 	        if (!err) { 
-	            return res.json(contract);
+	            return res.json({contract:contract});
 	        } else {
 	        	 res.statusCode = 404;
 		         return res.send({ error: 'Not found' });
@@ -30,7 +30,7 @@ module.exports = function(app, log, passport) {
 			function(req, res) {
 			    return Contract.find({ userId : req.params.id }, function (err, contract) {
 			        if (!err) {
-			            return res.json(contract);
+			            return res.json({contract:contract});
 			        } else {
 			        	 res.statusCode = 404;
 				         return res.send({ error: 'Not found' });
@@ -52,7 +52,7 @@ module.exports = function(app, log, passport) {
 	
 		    return	Contract.find().where('created').gt(new Date(mindateString)).lt(new Date(maxdateString)).exec(function (err, contract) {
 		        if (!err) {
-		            return res.json(contract);
+		            return res.json({contract:contract});
 		        } else {
 		        	 res.statusCode = 404;
 			         return res.send({ error: 'Not found' });
@@ -74,7 +74,7 @@ module.exports = function(app, log, passport) {
 	
 		    return	Contract.find({ userId : req.params.id }).where('created').gt(new Date(mindateString)).lt(new Date(maxdateString)).exec(function (err, contract) {
 		        if (!err) {
-		            return res.json(contract);
+		            return res.json({contract:contract});
 		        } else {
 		        	 res.statusCode = 404;
 			         return res.send({ error: 'Not found' });

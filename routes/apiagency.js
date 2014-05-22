@@ -14,7 +14,7 @@ module.exports = function(app, log, passport) {
 	app.get('/api/agency', function (req, res) {
 	    return Agency.find(function (err, agency) {
 	        if (!err) { 
-	            return res.json(agency);
+	            return res.json({agency:agency});
 	        } else {
 	        	 res.statusCode = 404;
 		         return res.send({ error: 'Not found' });
@@ -29,7 +29,7 @@ module.exports = function(app, log, passport) {
 			function(req, res) {
 			    return Agency.findById(req.params.id, function (err, agency) {
 			        if (!err) {
-			            return res.json(agency);
+			            return res.json({agency:agency});
 			        } else {
 			        	 res.statusCode = 404;
 				         return res.send({ error: 'Not found' });
@@ -43,7 +43,7 @@ module.exports = function(app, log, passport) {
 			function(req, res) {
 			    return Agency.find({ name : req.params.id }, function (err, agency) {
 			        if (!err) {
-			            return res.json(agency);
+			            return res.json({agencies:agency});
 			        } else {
 			        	 res.statusCode = 404;
 				         return res.send({ error: 'Not found' });

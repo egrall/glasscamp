@@ -13,7 +13,7 @@ module.exports = function(app, log, passport) {
 			function (req, res) {
 		    return CreditCard.find(function (err, creditCard) {
 		        if (!err) {
-		            return res.json(creditCard);
+		            return res.json({creditCard:creditCard});
 		        } else {
 		            res.statusCode = 500;
 		            log.error('Internal error(%d)',res.statusCode);
@@ -27,7 +27,7 @@ module.exports = function(app, log, passport) {
 			function(req, res) {
 			    return CreditCard.findById(req.params.id, function (err, creditcard) {
 			        if (!err) {
-			            return res.json(creditcard);
+			            return res.json({creditCard:creditCard});
 			        } else {
 			            res.statusCode = 500;
 			            log.error('Internal error(%d)',res.statusCode);
@@ -43,7 +43,7 @@ module.exports = function(app, log, passport) {
 	
 		    return CreditCard.find({ userId : req.params.id }, function (err, creditCard) {
 		        if (!err) {
-		            return res.send(creditCard);
+		            return res.send({creditCard:creditCard});
 		        } else {
 		            res.statusCode = 500;
 		            log.error('Internal error(%d)',res.statusCode);

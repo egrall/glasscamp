@@ -1,14 +1,30 @@
 {
 	"version":"0.1.0",
-	"basePath":"http://api.glasscamp.fr",
+	"basePath":"http://92.243.26.104:8080/",
 	"resources":[
 		{
-			"resource":"Agency",
+			"resource":"agency",
 			"json":"agency.json"
 		},
 		{
-			"resource":"Person",
+			"resource":"agent",
+			"json":"agent.json"
+		},
+		{
+			"resource":"abm",
+			"json":"abm.json"
+		},
+		{
+			"resource":"person",
 			"json":"person.json"
+		},
+		{
+			"resource":"creditcard",
+			"json":"creditcard.json"
+		},
+		{
+			"resource":"contract",
+			"json":"contract.json"
 		}
 	]
 }

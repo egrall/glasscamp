@@ -15,7 +15,7 @@ module.exports = function(app, log, passport) {
 	app.get('/api/agent', function (req, res) {
 	    return Agent.find(function (err, agent) {
 	        if (!err) { 
-	            return res.json(agent);
+	            return res.json({agent:agent});
 	        } else {
 	        	 res.statusCode = 404;
 		         return res.send({ error: 'Not found' });
@@ -29,7 +29,7 @@ module.exports = function(app, log, passport) {
 			function(req, res) {
 			    return Agent.find({ agentId : req.params.id }, function (err, agent) {
 			        if (!err) {
-			            return res.json(agent);
+			            return res.json({agent:agent});
 			        } else {
 			        	 res.statusCode = 404;
 				         return res.send({ error: 'Not found' });
@@ -43,7 +43,7 @@ module.exports = function(app, log, passport) {
 			function(req, res) {
 			    return Agent.findById(req.params.id, function (err, agent) {
 			        if (!err) {
-			            return res.json(agent);
+			            return res.json({agent:agent});
 			        } else {
 			        	 res.statusCode = 404;
 				         return res.send({ error: 'Not found' });
@@ -58,7 +58,7 @@ module.exports = function(app, log, passport) {
 			function(req, res) {
 			    return Agent.find({ userIDs : req.params.id }, function (err, agent) {
 			        if (!err) {
-			            return res.json(agent);
+			            return res.json({agent:agent});
 			        } else {
 			        	 res.statusCode = 404;
 				         return res.send({ error: 'Not found' });
