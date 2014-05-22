@@ -1,0 +1,82 @@
+{
+    "version":"0.1.0",
+    "resource":"API Glass Bank",
+    "endpoints":[
+        {
+            "endpoint":"contract",
+            "httpMethod":"GET",
+            "description":"contract for the API Docs.",
+            "shortDecription":"contract",
+            "url":"/api/contract",
+            "output":"{ 'contract':'contract'},"
+        },
+        {
+            "endpoint":"contract/:id",
+            "httpMethod":"GET",
+            "description":"get contract for the API Docs.",
+            "shortDecription":"get contract",
+            "url":"/api/contract/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of user"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'contract':'contract'},"
+        },          
+        {
+            "endpoint":"contract",
+            "httpMethod":"POST",
+            "description":"create contract for the API Docs.",
+            "shortDecription":"contract",
+            "url":"/api/contract",
+            "parameters":[
+                          {
+                          	 "parameter":"userId",
+                               "value":"(number)",
+                               "description": "ID of user"            
+                          },
+                          {
+                           	 "parameter":"kind",
+                                "value":"(kind)",
+                                "description": "CC / LIVRET / PEA /..."            
+                           },
+                           {
+                            	 "parameter":"duration",
+                                 "value":"(number)",
+                                 "description": "duration of contract"            
+                            },
+                            {
+                            	 "parameter":"account",
+                                 "value":"(number)",
+                                 "description": "account of contract"            
+                            },                            
+                            {
+                             	 "parameter":"created",
+                                  "value":"(date)",
+                                  "description": "created of contract"            
+                             }                  
+ 
+            ],
+            "output":"{ 'contract' : 'contract'},"        	
+        },
+        {
+            "endpoint":"contract/:id",
+            "httpMethod":"DELETE",
+            "description":"delete contract for the API Docs.",
+            "shortDecription":"del contract",
+            "url":"/api/contract/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of contract"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'status':'ok'},"
+        }       
+    ]
+} 

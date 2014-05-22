@@ -1,0 +1,61 @@
+{
+    "version":"0.1.0",
+    "resource":"API Glass Bank",
+    "endpoints":[
+        {
+            "endpoint":"abm",
+            "httpMethod":"GET",
+            "description":"abm for the API Docs.",
+            "shortDecription":"abm",
+            "url":"/api/abm",
+            "output":"{ 'abm':'abm'},"
+        },
+        {
+            "endpoint":"abm/:id",
+            "httpMethod":"GET",
+            "description":"get abm for the API Docs.",
+            "shortDecription":"get abm",
+            "url":"/api/abm/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of abm"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'abm':'abm'},"
+        },          
+        {
+            "endpoint":"abm",
+            "httpMethod":"POST",
+            "description":"create abm for the API Docs.",
+            "shortDecription":"abm",
+            "url":"/api/abm",
+            "parameters":[
+                          {
+                          	 "parameter":"name",
+                               "value":"(String)",
+                               "description": "name of abm"            
+                          }                     
+            ],
+            "output":"{ 'abm' : 'abm'},"        	
+        },
+        {
+            "endpoint":"abm/:id",
+            "httpMethod":"DELETE",
+            "description":"delete abm for the API Docs.",
+            "shortDecription":"del abm",
+            "url":"/api/abm/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of abm"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'status':'ok'},"
+        }       
+    ]
+} 

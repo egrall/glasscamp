@@ -1,0 +1,87 @@
+{
+    "version":"0.1.0",
+    "resource":"API Glass Bank",
+    "endpoints":[
+        {
+            "endpoint":"creditcard",
+            "httpMethod":"GET",
+            "description":"Creditcard for the API Docs.",
+            "shortDecription":"Creditcard",
+            "url":"/api/creditcard",
+            "output":"{ 'creditCard':'creditCard'},"
+        },
+        {
+            "endpoint":"creditcard/:id",
+            "httpMethod":"GET",
+            "description":"get creditcard for the API Docs.",
+            "shortDecription":"get creditcard",
+            "url":"/api/creditcard/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of creditcard"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'creditCard':'creditCard'},"
+        },          
+        {
+            "endpoint":"creditcard",
+            "httpMethod":"POST",
+            "description":"create creditcard for the API Docs.",
+            "shortDecription":"creditcard",
+            "url":"/api/creditcard",
+            "parameters":[
+                          {
+                          	 "parameter":"userId",
+                               "value":"(number)",
+                               "description": "ID of user"            
+                          },
+                          {
+                           	 "parameter":"number",
+                                "value":"(number)",
+                                "description": "number of creditcard"            
+                           },
+                           {
+                            	 "parameter":"cryptogram",
+                                 "value":"(number)",
+                                 "description": "cryptogram of creditcard"            
+                            },
+                            {
+                            	 "parameter":"type",
+                                 "value":"(String - MASTERCARD / VISA / ...)",
+                                 "description": "type of creditcard"            
+                            },                            
+                            {
+                             	 "parameter":"expire_month",
+                                  "value":"(number - 1 & 31)",
+                                  "description": "expire_month of creditcard"            
+                             },
+                             {
+                              	 "parameter":"expire_year",
+                                   "value":"(number - 1 & 12)",
+                                   "description": "expire_year of creditcard"            
+                              }                       
+ 
+            ],
+            "output":"{ 'creditCard' : 'creditCard'},"        	
+        },
+        {
+            "endpoint":"creditcard/:id",
+            "httpMethod":"DELETE",
+            "description":"delete creditcard for the API Docs.",
+            "shortDecription":"del creditcard",
+            "url":"/api/creditcard/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of creditcard"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'status':'ok'},"
+        }       
+    ]
+} 

@@ -1,0 +1,72 @@
+{
+    "version":"0.1.0",
+    "resource":"API Glass Bank",
+    "endpoints":[
+        {
+            "endpoint":"agent",
+            "httpMethod":"GET",
+            "description":"agent for the API Docs.",
+            "shortDecription":"agent",
+            "url":"/api/agent",
+            "output":"{ 'agent':'agent'},"
+        },
+        {
+            "endpoint":"agent/:id",
+            "httpMethod":"GET",
+            "description":"get agent for the API Docs.",
+            "shortDecription":"get agent",
+            "url":"/api/agent/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of agent"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'agent':'agent'},"
+        },          
+        {
+            "endpoint":"agent",
+            "httpMethod":"POST",
+            "description":"create agent for the API Docs.",
+            "shortDecription":"agent",
+            "url":"/api/agent",
+            "parameters":[
+                          {
+                          	 "parameter":"last_name",
+                               "value":"(String)",
+                               "description": "last_name of agent"            
+                          },
+                          {
+                           	 "parameter":"first_name",
+                                "value":"(String)",
+                                "description": "first_name of agent"            
+                           },
+                           {
+                            	 "parameter":"mail",
+                                 "value":"(String)",
+                                 "description": "mail of agent"            
+                            }                   
+ 
+            ],
+            "output":"{ 'agent' : 'agent'},"        	
+        },
+        {
+            "endpoint":"agent/:id",
+            "httpMethod":"DELETE",
+            "description":"delete agent for the API Docs.",
+            "shortDecription":"del agent",
+            "url":"/api/creditcard/:id",
+            "parameters":[
+                          {
+                          	 "parameter":"id",
+                               "value":"(number)",
+                               "description": "ID of agent"            
+                          }                 
+ 
+            ],            
+            "output":"{ 'status':'ok'},"
+        }       
+    ]
+} 
