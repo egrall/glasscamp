@@ -3,7 +3,7 @@
     "resource":"API Glass Bank",
     "endpoints":[
         {
-            "endpoint":"agency",
+            "endpoint":"api/agency",
             "httpMethod":"GET",
             "description":"all agency for the API Docs.",
             "shortDecription":"agency",
@@ -11,7 +11,7 @@
             "output":"{ 'agency':'agency'},"
         },
         {
-            "endpoint":"agency/:id",
+            "endpoint":"api/agency/:id",
             "httpMethod":"GET",
             "description":"get agency for the API Docs.",
             "shortDecription":"get agency",
@@ -27,7 +27,7 @@
             "output":"{ 'agency':'agency'},"
         },          
         {
-            "endpoint":"agency",
+            "endpoint":"api/agency",
             "httpMethod":"POST",
             "description":"create agency for the API Docs.",
             "shortDecription":"agency",
@@ -48,7 +48,7 @@
             "output":"{ 'agency' : 'agency'},"        	
         },
         {
-            "endpoint":"agency/:id",
+            "endpoint":"api/agency/:id",
             "httpMethod":"DELETE",
             "description":"delete agency for the API Docs.",
             "shortDecription":"del agency",
