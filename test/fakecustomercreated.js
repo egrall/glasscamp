@@ -152,7 +152,8 @@ PersonModel.remove({}, function(err) {
 						title : title,
 						vendor : vendor,
 						description : fakerBank.transaction.description(title, date, vendor),
-						account : fakerBank.transaction.amount(),
+						amount : fakerBank.transaction.amount(),
+						contract: '0',
 						operationDate : date,
 						customerDate : date,
 						photos : [{ }]

@@ -65,15 +65,15 @@ module.exports = function(app, log, passport) {
 		//passport.authenticate('bearer', { session: false }), 
 		function(req, res) {
 			//mandatory --------------------------------
-			if (req.body.hasOwnProperty('userId') ||
-				req.body.hasOwnProperty('kind') ||
-				req.body.hasOwnProperty('title') ||	
-				req.body.hasOwnProperty('account') ||			
-				req.body.hasOwnProperty('operationDate')
-				)
-			{ //------------------------------------------
+			//if (req.body.hasOwnProperty('userId') ||
+			//	req.body.hasOwnProperty('kind') ||
+			//	req.body.hasOwnProperty('title') ||	
+			//	req.body.hasOwnProperty('account') ||			
+			//	req.body.hasOwnProperty('operationDate')
+			//	)
+			//{ //------------------------------------------
 				
-		        var operation = req.query.operationDate.match(/\d{4}\/\d{2}\/\d{2}/);		// Format YYYY/MM/DD
+		        //var operation = req.query.operationDate.match(/\d{4}\/\d{2}\/\d{2}/);		// Format YYYY/MM/DD
 				
 			    var transaction = new Transaction({
 			        userId: req.body.userId,	
@@ -81,10 +81,11 @@ module.exports = function(app, log, passport) {
 			        kind :  req.body.kind,
 			        vendor : req.body.hasOwnProperty('vendor')?req.body.vendor:'',
 			        description	: req.body.hasOwnProperty('description')?req.body.description:'',
-			        account:  req.body.account,
-			        operationDate: new Date(operation),
-			        customerDate: req.body.hasOwnProperty('customerDate')?(new Date(req.query.customerDate.match(/\d{4}\/\d{2}\/\d{2}/))):'',
-			        signature_date: req.body.hasOwnProperty('signature_date')?(new Date(req.query.signature_date.match(/\d{4}\/\d{2}\/\d{2}/))):'',
+			        amount:  req.body.amount,
+				contract: req.body.hasOwnProperty('req.body.contract')?req.body.contract:'0',
+			        operationDate: new Date(req.body.operationDate),
+			        customerDate: req.body.hasOwnProperty('customerDate')?(new Date(req.body.customerDate)):'',
+			        signature_date: req.body.hasOwnProperty('signature_date')?(new Date(req.body.signatureDate)):'',
 					photos: [ { url : req.body.hasOwnProperty('photo')?req.body.photo:''}],
 			    });
 		    
@@ -105,7 +106,11 @@ module.exports = function(app, log, passport) {
 			            log.error('Internal error(%d): %s',res.statusCode,err.message);
 			        }
 			    });
-			}
+			//}
+			//else {
+			//	 res.statusCode = 400;
+                        //         res.send({ error: 'Validation error' });
+        		//}
 	});	
 
 
