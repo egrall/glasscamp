@@ -25,7 +25,8 @@ module.exports = function(app, log, passport) {
 	app.get('/api/transaction/person/:id',
 			//passport.authenticate('bearer', { session: false }), 
 			function(req, res) {
-			    return Transaction.find({ userId : req.params.id }, function (err, transaction) {
+							
+			    return Transaction.find({ userId : req.params.id}, function (err, transaction) {
 			        if (!err) {
 			            return res.json({transaction:transaction});
 			        } else {
@@ -33,8 +34,24 @@ module.exports = function(app, log, passport) {
 				         return res.send({ error: 'Not found' });
 			        }
 			    });
-		}
+			}
 	);
+	
+	app.get('/api/transaction/contract/:userid/:contractid',
+			//passport.authenticate('bearer', { session: false }), 
+			function(req, res) {
+							
+			    return Transaction.find({ contract : req.params.contractid, userId: req.params.userid}, function (err, transaction) {
+			        if (!err) {
+			            return res.json({transaction:transaction});
+			        } else {
+			        	 res.statusCode = 404;
+				         return res.send({ error: 'Not found' });
+			        }
+			    });
+			}
+	);	
+	
 	
 	app.get('/api/transaction/date/:id', function (req, res) {
         
