@@ -10,6 +10,7 @@ var Contract = new Schema({
         type: String,
         required: true
     },	
+	contractId: { type: String, required: true} ,    
 	kind: { type: String, required: true} ,
     title : { type: String , required: false},	
     duration: {type: String, required: true},

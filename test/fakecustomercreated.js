@@ -117,6 +117,7 @@ PersonModel.remove({}, function(err) {
         
         var contract = new ContractModel({
 			userId : item,
+			contractId: '0',			
 			kind : 'COMPTE COURANT',
 			title : "Mon Compte Courant",
 			duration : fakerBank.product.duration(ExpirationYear),
@@ -137,6 +138,7 @@ PersonModel.remove({}, function(err) {
 	        var contract = new ContractModel({
 	        			userId : item,
 	        			kind : type,
+	        			contractId: itemContract,
 	        			title : fakerBank.product.title(type),
 	        			duration : fakerBank.product.duration(ExpirationYear),
 	        	        iban: fakerBank.product.iban(),

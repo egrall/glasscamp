@@ -24,6 +24,22 @@ module.exports = function(app, log, passport) {
 	    });
 	});	
 	
+	
+	//recuperation des contrats de la personne par l'identifiant contractId
+	app.get('/api/contract/id/:contractId',
+			//passport.authenticate('bearer', { session: false }), 
+			function(req, res) {
+			    return Contract.find({ contractId : req.params.contractId }, function (err, contract) {
+			        if (!err) {
+			            return res.json({contract:contract});
+			        } else {
+			        	 res.statusCode = 404;
+				         return res.send({ error: 'Not found' });
+			        }
+			    });
+		}
+	);	
+	
 	//recuperation des contrats de la personne par l'identifiant userId
 	app.get('/api/contract/person/:id',
 			//passport.authenticate('bearer', { session: false }), 
@@ -95,6 +111,7 @@ module.exports = function(app, log, passport) {
 		function(req, res) {
 			//mandatory --------------------------------
 			if (req.body.hasOwnProperty('userId') ||
+				req.body.hasOwnProperty('contractId') ||	
 				req.body.hasOwnProperty('kind') ||
 				req.body.hasOwnProperty('duration') ||	
 				req.body.hasOwnProperty('amount') ||			
@@ -103,7 +120,8 @@ module.exports = function(app, log, passport) {
 			{ //------------------------------------------
 								
 			    var contract = new Contract({
-			        userId: req.body.userId,	
+			        userId: req.body.userId,
+			        contractId: req.body.contractId,
 			        kind :  req.body.kind,
 			        title	: req.body.hasOwnProperty('title')?req.body.title:'',
 			        duration :  req.body.duration,
@@ -151,10 +169,10 @@ module.exports = function(app, log, passport) {
 	            res.statusCode = 404;
 	            return res.send({ error: 'Not found' });
 	        }
-	               
 	        
 	        //update if parameter
-	        req.body.hasOwnProperty('userId')?(transaction.userId = req.body.userId):(contract.userId = contract.userId);
+	        req.body.hasOwnProperty('userId')?(contract.userId = req.body.userId):(contract.userId = contract.userId);
+	        req.body.hasOwnProperty('contractId')?(contract.contractId = req.body.contractId):(contract.contractId = contract.contractId);
 	        req.body.hasOwnProperty('kind')?(contract.kind = req.body.kind):(contract.kind = contract.kind);
 	        req.body.hasOwnProperty('title')?(contract.title = req.body.title):(contract.title = contract.title);
 	        req.body.hasOwnProperty('duration')?(contract.duration = req.body.account):(contract.duration = contract.duration);	  
