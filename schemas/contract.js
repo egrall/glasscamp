@@ -14,7 +14,7 @@ var Contract = new Schema({
     title : { type: String , required: false},	
     duration: {type: String, required: true},
     iban: { type: String, required: true}, 
-    account: {type: String, required: true},    
+    amount: {type: String, required: true},    
     created: { type: Date, required: true},
     dismiss: { type: Date },    
     lastmodified: { type: Date, default: Date.now },

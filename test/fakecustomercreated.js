@@ -113,8 +113,25 @@ PersonModel.remove({}, function(err) {
         	//just remove all
         });        
         
-        var NbUserProduct = faker.random.number(NbMaxProduct);        
-        for(var itemContract=0;itemContract<NbUserProduct;itemContract++)	{
+        var NbUserProduct = faker.random.number(NbMaxProduct); 
+        
+        var contract = new ContractModel({
+			userId : item,
+			kind : 'COMPTE COURANT',
+			title : "Mon Compte Courant",
+			duration : fakerBank.product.duration(ExpirationYear),
+	        iban: fakerBank.product.iban(),
+	        amount : fakerBank.product.amount(),
+			created : fakerBank.product.created(ExpirationYear)
+		});
+
+		contract.save(function(err, contract) {
+		if(err) return log.error(err);
+		//else log.info("New contract -- %s:%s:%s", contract.kind, contract.duration, contract.account);
+		});        
+        
+        
+        for(var itemContract=1;itemContract<NbUserProduct;itemContract++)	{
         	
 	        var type = fakerBank.product.all();
 	        var contract = new ContractModel({
@@ -123,13 +140,13 @@ PersonModel.remove({}, function(err) {
 	        			title : fakerBank.product.title(type),
 	        			duration : fakerBank.product.duration(ExpirationYear),
 	        	        iban: fakerBank.product.iban(),
-	        			account : fakerBank.product.amount(),
+	        	        amount : fakerBank.product.amount(),
 	        			created : fakerBank.product.created(ExpirationYear)
 	 			});
 			
 	        contract.save(function(err, contract) {
 			if(err) return log.error(err);
-			//else log.info("New contract -- %s:%s:%s", contract.kind, contract.duration, contract.account);
+			//else log.info("New contract -- %s:%s:%s", contract.kind, contract.duration, contract.amount);
 			});
         }
         

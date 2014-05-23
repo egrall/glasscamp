@@ -97,23 +97,21 @@ module.exports = function(app, log, passport) {
 			if (req.body.hasOwnProperty('userId') ||
 				req.body.hasOwnProperty('kind') ||
 				req.body.hasOwnProperty('duration') ||	
-				req.body.hasOwnProperty('account') ||			
+				req.body.hasOwnProperty('amount') ||			
 				req.body.hasOwnProperty('created')
 				)
 			{ //------------------------------------------
-				
-		        var createdContract = req.query.created.match(/\d{4}\/\d{2}\/\d{2}/);		// Format YYYY/MM/DD
-				
+								
 			    var contract = new Contract({
 			        userId: req.body.userId,	
 			        kind :  req.body.kind,
 			        title	: req.body.hasOwnProperty('title')?req.body.title:'',
 			        duration :  req.body.duration,
 			        iban: req.body.hasOwnProperty('iban')?(req.body.iban):(fakerBank.product.iban()),	        
-			        account:  req.body.account,
-			        created: new Date(createdContract),
-			        dismiss: req.body.hasOwnProperty('dismiss')?(new Date(req.query.dismiss.match(/\d{4}\/\d{2}\/\d{2}/))):'',
-			        signature_date: req.body.hasOwnProperty('signature_date')?(new Date(req.query.signature_date.match(/\d{4}\/\d{2}\/\d{2}/))):''
+			        amount:  req.body.amount,
+			        created: new Date(req.query.created),
+			        dismiss: req.body.hasOwnProperty('dismiss')?(new Date(req.query.dismiss)):'',
+			        signature_date: req.body.hasOwnProperty('signature_date')?(new Date(req.query.signature)):''
 			    });
 		    
 			    contract.save(function (err) {
@@ -161,7 +159,7 @@ module.exports = function(app, log, passport) {
 	        req.body.hasOwnProperty('title')?(contract.title = req.body.title):(contract.title = contract.title);
 	        req.body.hasOwnProperty('duration')?(contract.duration = req.body.account):(contract.duration = contract.duration);	  
 	        req.body.hasOwnProperty('iban')?(contract.iban = req.body.iban):(contract.iban = contract.iban);	        	        
-	        req.body.hasOwnProperty('account')?(contract.account = req.body.account):(contract.account = contract.account);
+	        req.body.hasOwnProperty('amount')?(contract.amount = req.body.amount):(contract.amount = contract.amount);
 	        req.body.hasOwnProperty('created')?(contract.created = req.body.created):(contract.created = contract.created);
 	        req.body.hasOwnProperty('dismiss')?(contract.dismiss = req.body.dismiss):(contract.dismiss = contract.dismiss);
 	        req.body.hasOwnProperty('signature_date')?(contract.signature_date = req.body.signature_date):(contract.signature_date = contract.signature_date);
